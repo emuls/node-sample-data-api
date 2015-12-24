@@ -1,12 +1,19 @@
-var data = {};
+var data = {
+    "dogs" : [
+        "Labrador",
+        "Golden Retriever",
+        "Malteze"
+    ]
+};
 
 var express = require('express');
 var app = express();
 
 app.use('/', express.static('www'));
 
-app.get('/hello', function (req, res) {
-    res.send('Hello!');
+app.get('/data', function (req, res) {
+    res.header('type', 'text/json')
+    res.send(JSON.stringify(data));
 });
 
 var server = app.listen(3000, function () {
