@@ -23,10 +23,29 @@ var app = express();
 
 app.use('/', express.static('www'));
 
-app.get('/api/data', function (req, res) {
-    res.header('type', 'text/json')
-    res.send(JSON.stringify(data));
-});
+app.get('/api/data/:key', (req, res) => retrieveData(req, res));
+app.get('/api/data', (req, res) => retrieveData(req, res));
+
+function retrieveData(req, res){
+    var key = req.params.key;
+    var result;
+
+    if(key) {
+        console.log('Returning data for: ' + key);
+        result = data[key];
+    }else{
+        console.log('Returning data: ' + key);
+        result = data;
+    }
+
+    if (result) {
+        res.header('type', 'text/json');
+        res.send(JSON.stringify(result));
+    } else {
+        res.status(404);
+        res.send('No data found for key: ' + key);
+    }
+}
 
 app.put('/set-data', function(req, res) {
     console.log(req.body);      // your JSON
