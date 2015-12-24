@@ -3,5 +3,11 @@
     "Labrador",
     "Golden Retriever",
     "Malteze"
+  ],
+  "trees" : [
+    "Aspen",
+    "Ash",
+    "Pine",
+    "Spruce"
   ]
 }
