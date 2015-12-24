@@ -5,8 +5,14 @@ angular.module('components', [])
             transclude: true,
             scope: {},
             controllerAs:'sampleData',
-            controller: function($scope, $element) {
-                this.data = {"numbers":["1","2","3"]};
+            controller: function($scope, $element, $http) {
+                var self = this;
+                this.data = {"Loading":"Loading please wait..."};
+                $http.get("api/data").success(function(result){
+                    self.data = result;
+                }).error(function(){
+                   this.data={"error" : "error loading data"};
+                });
             },
             template:
             '<div class="sample-data-container">' +
