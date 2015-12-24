@@ -28,6 +28,11 @@ app.get('/api/data', function (req, res) {
     res.send(JSON.stringify(data));
 });
 
+app.put('/set-data', function(req, res) {
+    console.log(req.body);      // your JSON
+    response.send(req.body);    // echo the result back
+})
+
 var server = app.listen(3000, function () {
     var host = server.address().address;
     var port = server.address().port;

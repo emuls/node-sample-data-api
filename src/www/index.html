@@ -4,6 +4,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
         <script src="scripts/sample-data-app.js"></script>
         <script src="scripts/sample-data-components.js"></script>
+        <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
     </head>
     <body ng-app="sample-data-app">
         <h1>Sample Data Server</h1>
@@ -14,6 +15,16 @@
         <p>Returns data for posted key</p>
         <h4>@POST/data?key={key}</h4>
         <p>Post arbritary data to specified key</p>
+
+        <h1>Update Data</h1>
+        <ng-form name="data-form">
+            <div>
+                <textarea name="data"></textarea>
+            </div>
+            <div>
+                <button>Set Data</button>
+            </div>
+        </ng-form>
 
         <sample-data></sample-data>
 
