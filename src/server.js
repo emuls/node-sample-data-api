@@ -1,1 +1,1 @@
-require('cat');
+var data = {};
