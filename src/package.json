@@ -1,0 +1,9 @@
+{
+  "name": "sample-data-server",
+  "description" : "Serves sample data for test applications",
+  "license" : "MIT",
+  "repository" : "emuls/node-sample-data-server",
+  "dependencies" : {
+    "serve-static" : "~1.10"
+  }
+}
