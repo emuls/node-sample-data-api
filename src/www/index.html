@@ -1,8 +1,11 @@
 <html>
     <head>
-
+        <title>Sample Data Server</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="scripts/sample-data-app.js"></script>
+        <script src="scripts/sample-data-components.js"></script>
     </head>
-    <body>
+    <body ng-app="sample-data-app">
         <h1>Sample Data Server</h1>
         <h3>Description:</h3>
         <p>A node.js server for serving sample data meant for testing applications that need access to </p>
@@ -11,5 +14,8 @@
         <p>Returns data for posted key</p>
         <h4>@POST/data?key={key}</h4>
         <p>Post arbritary data to specified key</p>
+
+        <sample-data></sample-data>
+
     </body>
 </html>

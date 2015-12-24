@@ -23,7 +23,7 @@ var app = express();
 
 app.use('/', express.static('www'));
 
-app.get('/data', function (req, res) {
+app.get('/api/data', function (req, res) {
     res.header('type', 'text/json')
     res.send(JSON.stringify(data));
 });
