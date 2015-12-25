@@ -4,13 +4,13 @@
 ### Basic Usage
 
 ```sh
-$>cd src
-$>npm install
-$>node server.js
+$ cd src
+$ npm install
+$ node server.js
 ```
 
 ### To provide your own sample data json file
 
 ```sh
-$>node server.js filename
+$ node server.js filename
 ```
