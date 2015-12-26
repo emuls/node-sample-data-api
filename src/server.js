@@ -1,6 +1,7 @@
 var ds = require('./datastore');
 var api = require('./api');
 var express = require('express');
+var bodyParser = require('body-parser');
 
 var dataFile = process.argv[2];
 if(!dataFile){
@@ -10,8 +11,11 @@ ds.init(dataFile);
 
 var app = express();
 app.use('/', express.static('www'));
+app.use(bodyParser.json());
 app.get('/api/data/:key', (req, res) => api.retrieveData(req, res));
 app.get('/api/data', (req, res) => api.retrieveData(req, res));
+app.post('/api/data/:key', (req, res) => api.putData(req, res));
+app.post('/api/data', (req, res) => api.putData(req, res));
 
 app.put('/set-data', function(req, res) {
     console.log(req.body);      // your JSON
