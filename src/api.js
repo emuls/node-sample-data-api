@@ -24,8 +24,9 @@ exports.retrieveData = function(req, res){
 }
 
 exports.putData = function(req, res){
+    console.log('Putting Data');
     var key = req.param.key;
-    if(!req/body){
+    if(!req.body){
         console.log('Invalid data');
         res.status(400).send('Invalid data');
         return;
@@ -34,7 +35,7 @@ exports.putData = function(req, res){
         ds.data[key]=req.body;
     }else {
         console.log('Data Stored');
-        ds.data = data;
+        ds.data = req.body;
     }
     res.send('Data Stored');
 }
