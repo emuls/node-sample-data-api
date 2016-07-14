@@ -12,6 +12,7 @@ ds.init(dataFile);
 var app = express();
 app.use('/', express.static('www'));
 app.use(bodyParser.json());
+app.get('/api/data/:key/:cache', (req, res) => api.retrieveData(req, res));
 app.get('/api/data/:key', (req, res) => api.retrieveData(req, res));
 app.get('/api/data', (req, res) => api.retrieveData(req, res));
 app.post('/api/data/:key', (req, res) => api.putData(req, res));
